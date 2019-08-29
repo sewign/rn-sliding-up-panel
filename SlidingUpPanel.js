@@ -366,14 +366,14 @@ class SlidingUpPanel extends React.PureComponent {
 
   _triggerAnimation(options = {}) {
     const {duration, friction, animatedValue} = this.props;
-    const animatedValue = animatedValue.__getValue()
-    const remainingDistance = animatedValue - options.toValue
+    const fromValue = animatedValue.__getValue()
+    const remainingDistance = fromValue - options.toValue
     const velocity = options.velocity || remainingDistance / (duration || Constants.TIME_CONSTANT) // prettier-ignore
 
     this._flick.start({
       velocity,
       toValue: options.toValue,
-      fromValue: animatedValue,
+      fromValue,
       friction
     })
   }
