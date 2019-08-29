@@ -24,7 +24,8 @@ export interface SlidingUpPanelProps {
   allowDragging?: boolean
   showBackdrop?: boolean
   backdropOpacity?: number
-  friction?: number
+  friction?: number,
+  duration?: number,  
   containerStyle?: StyleProp<ViewStyle>
   backdropStyle?: StyleProp<ViewStyle>
   children?:
